@@ -22,7 +22,7 @@ function getUserInfo() {
         method: 'GET',
         url: '/my/userinfo',
         success: function(res) {
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 return layui.layer.msg('获取用户信息失败！')
             }
@@ -35,7 +35,7 @@ function getUserInfo() {
 // 渲染用户的头像
 function renderAvatar(user) {
     // 1.获取用户的名称
-    var name = user.nickname || user.username;
+    var name = user.nickname ? user.nickname : user.username;
     // 2.渲染欢迎的文本
     $("#welcome").html(`欢迎您! ${name}`);
     var userPic = user.user_pic;
