@@ -70,6 +70,12 @@ $(function() {
         });
     }
 
+    // 点击编辑
+    $('tbody').on('click', '#btnEdit', function() {
+        let editId = $(this).siblings().data("id");
+        location.href = '/article/art_edit.html?id=' + editId;
+    });
+
     // 点击筛选
     $("#form-search").on("submit", function(e) {
         e.preventDefault();
@@ -113,14 +119,6 @@ $(function() {
             }
         });
     }
-
-    // 点击编辑
-    $('tbody').on('click', '#btnEdit', function() {
-        var artList = window.parent.document.querySelector("#artList");
-        artList.href = './article/art_edit.html';
-        location.href = '/article/art_edit.html';
-    });
-
 
 
     // 点击删除
